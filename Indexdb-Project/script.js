@@ -47,8 +47,12 @@ request.onsuccess = function () {
 
 
     transaction.oncomplete = function () {
+        console.log("note stored!")
         db.close();
     };
+    transaction.onerror = function(){
+        console.log("there was an error storing data")
+    }
 
 };
 
