@@ -33,7 +33,7 @@ request.onsuccess = function () {
 
     const idQuery = store.get(4);
     const colourQuery = colourIndex.getAll(["blue"]);
-    const colourMakeQuery = colourAndMakeIndex.get(["red", "Toyota"]);
+    const colourMakeQuery = colourAndMakeIndex.getAll(["red", "Toyota"]);
 
     idQuery.onsuccess = function () {
         console.log("idQuery", idQuery.result)
@@ -47,8 +47,12 @@ request.onsuccess = function () {
 
 
     transaction.oncomplete = function () {
+        console.log("note stored!")
         db.close();
     };
+    transaction.onerror = function(){
+        console.log("there was an error storing data")
+    }
 
 };
 
