@@ -15,7 +15,7 @@ async function init(params) {
                 key: 'location-update',
                 value: JSON.stringify({
                     name: 'Tony Stark',
-                    loc: "South"
+                    loc: "North"
                 })
             }
         ]
