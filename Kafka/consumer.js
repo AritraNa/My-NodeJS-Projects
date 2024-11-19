@@ -11,7 +11,7 @@ async function init() {
             console.log(`
                 [${topic}]:
                 PARTITION:${partition}
-                MESS:`,message.toString())
+                MESS:`,message.value.toString())
         },
     });
 }
